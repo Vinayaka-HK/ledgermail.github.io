@@ -9,6 +9,19 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-4BGMDBHW9H"
     ></script>
     <script>
+
+        function buttonHandler() {
+          var t = document.getElementById("messageButton");
+          if(t.value=="YES"){
+            document.getElementById("chatMessage").style.display = "none";
+            t.value="NO";
+          }
+          else if(t.value=="NO"){
+            document.getElementById("chatMessage").style.display = "block";
+            t.value="YES";
+          }
+          console.log(t.value);
+        }   
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -54,7 +67,24 @@
     <title>Ledgermail - Web3 Email</title>
   </head>
   <body class="font-custom">
+
+
+
+    <!-- <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/55d8c999-745b-42d3-9e74-16995375a10a"></iframe>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+      <df-messenger
+        intent="WELCOME"
+        chat-title="LedgerChat"
+        agent-id="55d8c999-745b-42d3-9e74-16995375a10a"
+        language-code="en"
+      ></df-messenger> -->
+      <!-- <df-messenger><iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/55d8c999-745b-42d3-9e74-16995375a10a"></iframe></df-messenger> -->
     <div>
+  
+      <button onclick="buttonHandler()" title="ledgermail" value="NO" id="messageButton"
+      class="fixed z-999 bottom-10 right-8 bg-blue-500 w-19 h-19  rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl ">&#9993;</button>
+      <style>#chatMessage { display: none;}</style>
+      <div id="chatMessage"  class ="fixed z-10 bottom-20 right-8" ><iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/55d8c999-745b-42d3-9e74-16995375a10a"></iframe></div>
       <!-- nav -->
       <header class="header-section text-white h-24 bg-white">
         <nav class="nav-container">
